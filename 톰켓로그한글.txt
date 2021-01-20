@@ -1,0 +1,6 @@
+intellij 톰캣 로그 한글깨짐 방지
+
+1.ctrl+shift+a를 누른 후 vm을 입력하고 사옹자 지정(edit Custom ) vm 옵션 선택
+2.맨 마지막 줄에 다음 추가
+-Dfile.encoding=UTF-8
+3.intellij 재 가동
