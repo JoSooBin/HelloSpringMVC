@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> <!--$이런식으로 jsp에서 호출할때. 기본적으로 사용-->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %><!--함수 사용시-->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %><!---->
 
 <html>
 <head>

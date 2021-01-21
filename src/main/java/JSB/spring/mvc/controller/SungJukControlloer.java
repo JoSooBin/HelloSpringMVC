@@ -57,8 +57,50 @@ public class SungJukControlloer {
         return mv;
     }
 
+    //sungjuklist.jsp에서
+    //목록에서 학생이름을 클릭하면 학생번호sjno를 전송
     @GetMapping("/sungjukview") //성적조회
-    public ModelAndView sungjukview(){
-        return null;
+    public ModelAndView sungjukview(String sjno){
+        ModelAndView mv = new ModelAndView();
+
+        mv.setViewName("sungjukview");
+        //뷰 리졸버의 머리글 + 뷰이름 + 뷰리졸버 꼬리글
+        //WEB-INF/jsp/+ sungjukview +jsp
+
+        mv.addObject("sj",sjsrv13.readOneSungJuk(sjno));
+
+        return mv;
+    }
+
+    //성적번호를 이용해서 지정한 성적데이터를 삭제함
+    @GetMapping("/sungjukdel")
+    public String sungjukdel(String sjno){
+
+        System.out.println(sjsrv13.removeSungJuk(sjno));
+
+        //성적데이터를 삭제하고 난 뒤 /sungjuklist로 바로 이동
+        return "redirect:/sungjuklist";
+    }
+
+    //성적번호를 이용해서 수정할 성적데이터를 읽어와서 sungjukupd.jsp에 출력함
+    @GetMapping("/sungjukupd")
+    public ModelAndView sungjukupd(String sjno){
+        ModelAndView mv = new ModelAndView();
+
+        mv.setViewName("sungjukupd");
+        mv.addObject("sj",sjsrv13.readOneSungJuk(sjno));
+
+        return mv;
+    }
+
+    //수정할 성적데이터를 전송 받아서
+    //sungjuk 테이블에 적용하고 sungjuklist로 redirect함
+    @PostMapping("/sungjukupdok")
+    public String sungjukupdok(SungJukVO sj){
+
+        System.out.println(sjsrv13.modifySungJuk(sj));
+        //특정 메서드에서 return한 결과를 콘솔에서 확인
+
+        return "redirect:/sungjuklist";
     }
 }

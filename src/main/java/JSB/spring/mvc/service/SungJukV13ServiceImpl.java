@@ -42,15 +42,17 @@ public class SungJukV13ServiceImpl implements SungJukV13Service {
         return sjdao12.selectSungJuk();
     }
 
-    public SungJukVO readOneSungJuk() {
-        return null;
+    public SungJukVO readOneSungJuk(String sjno) {
+        return sjdao12.selectOneSungJuk(sjno);
     }
 
-    public String modifySungJuk() {
-        return null;
+    public String modifySungJuk(SungJukVO sj) {
+        computeSungJuk(sj);
+        return sjdao12.updateSungJuk(sj);
     }
 
-    public String removeSungJuk() {
-        return null;
+    public String removeSungJuk(String sjno) {
+
+        return sjdao12.deleteSungJuk(Integer.parseInt(sjno));
     }
 }

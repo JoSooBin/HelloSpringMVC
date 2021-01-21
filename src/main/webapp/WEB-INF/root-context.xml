@@ -24,7 +24,7 @@
     <bean id="sqlSessionFactory"
           class="org.mybatis.spring.SqlSessionFactoryBean"
           p:dataSource-ref="dbcpDataSource"
-          p:mapperLocations="classpath:mybatis3/SungJukMapper.xml" />
+          p:mapperLocations="classpath:mybatis3/*Mapper.xml" />
 
     <!-- myBatis3 설정 #2 -->
     <bean id="sqlSession"

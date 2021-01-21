@@ -13,7 +13,9 @@
     <tr><th>번호</th><th>이름</th><th>국어</th><th>영어</th><th>수학</th><th>등록일</th></tr>
 
     <c:forEach var="sj" items="${sjlist}">
-    <tr><th>${sj.sjno}</th><th>${sj.name}</th><th>${sj.kor}</th><th>${sj.eng}</th><th>${sj.mat}</th>
+    <tr><th>${sj.sjno}</th>
+        <th><a href="/sungjukview?sjno=${sj.sjno}">${sj.name}</a></th>
+        <th>${sj.kor}</th><th>${sj.eng}</th><th>${sj.mat}</th>
         <th>${fn:substring(sj.regdate,0,10)}</th></tr>
     </c:forEach>
 </table>
